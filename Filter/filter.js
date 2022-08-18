@@ -1,16 +1,18 @@
-const filter = (array, callback) => {
-    // empty array to filter out the array
-    let filteredResult = [];
+const filter = (list, callback) => {
+    // empty list
+    const filteredResult = [];
 
-    for (let item of array) {
-
-        // calls callback on filteredResult items array 
-        filteredResult.push(callback(item));
+    // loop through list
+    for (let item of list) {
+        // check if every element in list matches callback
+        if (callback(item)) {
+            // push matched elements to empty list
+            filteredResult.push(item);
+        }
     }
-
-    // returns filteredResult array contains items from array 
-    // that are not applied to the callback function
+    // return the filteredResult list (empty list if there are no elements matching)
     return filteredResult;
+
 }
 
 export default filter;
