@@ -3,9 +3,10 @@ const filter = (list, callback) => {
     const filteredResult = [];
 
     // loop through list
-    for (let item of list) {
-        // check if every element in list matches callback
-        if (callback(item)) {
+    for (let index = 0; index < list.length; index++) {
+        // check if every element in list matches callback, 
+        // expected to receive the element and the index and the list to support general use
+        if (callback(list[index], index, list)) {
             // push matched elements to empty list
             filteredResult.push(item);
         }
