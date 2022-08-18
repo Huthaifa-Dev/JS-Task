@@ -2,7 +2,7 @@ const filter = (array, callback) => {
     // empty array to filter out the array
     let filteredResult = [];
 
-    for (let item in array) {
+    for (let item of array) {
 
         // calls callback on filteredResult items array 
         filteredResult.push(callback(item));
